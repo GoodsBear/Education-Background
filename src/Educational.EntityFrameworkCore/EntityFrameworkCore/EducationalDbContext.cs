@@ -1,11 +1,9 @@
-﻿using Educational.Organization;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
 namespace Educational.EntityFrameworkCore;
@@ -38,11 +36,6 @@ public class EducationalDbContext :
     {
 
     }
-    /// <summary>
-    /// 数据集
-    /// </summary>
-    public DbSet<OrganizationModel> OrganizationModels { get; set; }
-    public DbSet<OrganizationLevel> OrganizationLevels { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -62,21 +55,5 @@ public class EducationalDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
-        //部门机构管理
-        builder.Entity<OrganizationModel>(b =>
-        {
-            b.ToTable(EducationalConsts.DbTablePrefix + "OrganizationModels", EducationalConsts.DbSchema);
-            b.ConfigureByConvention();
-            b.Property(x => x.Id).IsRequired().HasMaxLength(128);
-            // ... 其它字段同理，添加 .HasComment("xxx") ...
-        });
-        //部门机构级别管理
-        builder.Entity<OrganizationLevel>(b =>
-        {
-            b.ToTable(EducationalConsts.DbTablePrefix + "OrganizationLevel", EducationalConsts.DbSchema);
-            b.ConfigureByConvention();
-            b.Property(x => x.Id).IsRequired().HasMaxLength(128);
-            // ... 其它字段同理，添加 .HasComment("xxx") ...
-        });
     }
 }
