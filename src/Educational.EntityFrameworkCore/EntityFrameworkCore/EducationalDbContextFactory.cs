@@ -29,5 +29,5 @@ public class EducationalDbContextFactory : IDesignTimeDbContextFactory<Education
             .AddJsonFile("appsettings.json", optional: false);
 
         return builder.Build();
-    }
+    } 
 }
