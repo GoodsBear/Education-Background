@@ -261,5 +261,5 @@ src/Educational.DbMigrator/Logs/*
 src/Educational.Blazor.Server/Logs/*
 src/Educational.Blazor.Server.Tiered/Logs/*
 
-Use abp install-libs to restore.
+#Use abp install-libs to restore.
 **/wwwroot/libs/*
