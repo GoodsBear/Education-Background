@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Educational.Positions;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -36,7 +37,10 @@ public class EducationalDbContext :
     {
 
     }
-
+    /// <summary>
+    /// 职位表映射
+    /// </summary>
+    public DbSet<Position> Position { get; set;}
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
