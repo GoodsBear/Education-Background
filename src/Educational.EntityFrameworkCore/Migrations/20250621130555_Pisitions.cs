@@ -5,7 +5,7 @@
 namespace Educational.Migrations
 {
     /// <inheritdoc />
-    public partial class 初始化数据 : Migration
+    public partial class Pisitions : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -1,5 +1,6 @@
 ﻿using Educational.AnncoucementManager;
 using Educational.RBAC;
+﻿using Educational.Positions;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -38,7 +39,7 @@ public class EducationalDbContext :
     {
 
     }
-    //public DbSet<Announcement>Annoiuncement { get; set; } //公告表
+
 
     //public DbSet<Role> Role { get; set; } //角色表
 
@@ -47,6 +48,10 @@ public class EducationalDbContext :
     //public DbSet<Permissions> Permissions { get; set; } //权限表
 
 
+    /// <summary>
+    /// 职位表映射
+    /// </summary>
+    public DbSet<Position> Position { get; set;}
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
