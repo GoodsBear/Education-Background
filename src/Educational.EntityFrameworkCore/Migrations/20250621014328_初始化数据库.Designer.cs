@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Educational.Migrations
 {
     [DbContext(typeof(EducationalDbContext))]
-    [Migration("20250620092726_简化Educational")]
-    partial class 简化Educational
+    [Migration("20250621014328_初始化数据库")]
+    partial class 初始化数据库
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
